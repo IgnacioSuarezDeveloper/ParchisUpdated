@@ -1,7 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using System.Diagnostics;
 
 namespace ParchisFresh
 {
@@ -15,14 +14,13 @@ namespace ParchisFresh
         private Vector2 boardSize = new Vector2(1100, 1100);
         private Vector2 InitialBoardPosition = new Vector2(0, 0);
 
-        //ficha de prueba.
-        private Chip chip;
+        //tamaño de las fichas.
         private Vector2 chipSize = new Vector2(50, 50);
 
-        private Dice dice;
-
+        //array de jugadores.
         private Player[] players;
 
+        private ColorChip turn;
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -48,8 +46,7 @@ namespace ParchisFresh
                 players[i] = new Player((ColorChip)i, boardSize, chipSize);
             }
 
-            //dados
-            dice = new Dice(new Vector2(100, 100), new Vector2(500, 100), ColorChip.red);
+            turn = ColorChip.red;
             base.Initialize();
         }
 
@@ -76,7 +73,8 @@ namespace ParchisFresh
             //se actualiza la posicion del mouse.
             MouseHandeler.Position = MouseHandeler.GetPos();
 
-            
+            //click dados.
+            AllDicesClick();
 
             base.Update(gameTime);
         }
@@ -93,7 +91,9 @@ namespace ParchisFresh
             //dibujando todas las fichas del jugador.
             DrawAllChips();
 
-            dice.Draw(_spriteBatch, new Vector2(0,0));
+            //dibujando todos los dados.
+            DrawAllDices();
+
             _spriteBatch.End();
 
             base.Draw(gameTime);
@@ -111,6 +111,22 @@ namespace ParchisFresh
             foreach (Player p in players)
             {
                 p.DrawAllChips(_spriteBatch);
+            }
+        }
+
+        public void DrawAllDices()
+        {
+            foreach (Player p in players)
+            {
+                p.Dice.Draw(_spriteBatch, new Vector2(0, 0));
+            }
+        }
+
+        public void AllDicesClick()
+        {
+            foreach (Player p in players)
+            {
+                p.Dice.Click(ref turn);
             }
         }
     }

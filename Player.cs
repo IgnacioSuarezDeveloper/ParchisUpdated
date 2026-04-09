@@ -1,5 +1,4 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
-using System;
 using Microsoft.Xna.Framework;
 
 namespace ParchisFresh
@@ -10,6 +9,7 @@ namespace ParchisFresh
         //4 fichas.
         Chip[] fichas;
 
+        Dice dice;
         //color del jugador.
         ColorChip color;
 
@@ -28,15 +28,22 @@ namespace ParchisFresh
             get { return fichas; }
         }
 
+        public Dice Dice
+        {
+            get { return dice; }
+        }
+
         //constructor.
         public Player(ColorChip _color, Vector2 boardSize, Vector2 chipSize)
         {
+            //color jugador.
+            color = _color;
+
             //fichas del jugador.
             fichas = new Chip[4];
 
-            //color jugador.
-            color = _color;
-            
+
+
             //inicializando la posicion del jugador
             if(color == ColorChip.red)
             {
@@ -55,8 +62,13 @@ namespace ParchisFresh
                 position.X = boardSize.X - 270;
                 position.Y = boardSize.Y - 250;
             }
+            //dado del jugador.
+            dice = new Dice(position, chipSize, color);
 
-                int ofset = 50;
+            //distancia entre fichas.
+            int ofset = 50;
+
+            //posicion de las fichas en la pantalla al iniciar.
             for (int i = 0; i < fichas.Length; i++)
             {
                 Vector2 positionFixed = new Vector2(position.X + ofset * i , position.Y);
