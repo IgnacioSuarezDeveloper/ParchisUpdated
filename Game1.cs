@@ -19,45 +19,65 @@ namespace ParchisFresh
         private Chip chip;
         private Vector2 chipSize = new Vector2(50, 50);
 
+        private Dice dice;
 
-        
+        private Player[] players;
+
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
+            //ancho alto de la ventana.
             _graphics.PreferredBackBufferWidth = (int)boardSize.X;   // ancho en píxeles
             _graphics.PreferredBackBufferHeight = (int)boardSize.Y;  // alto en píxeles
+
             _graphics.ApplyChanges();
         }
 
         protected override void Initialize()
         {
+            //crea objeto tablero.
             board = new Board(new Vector2((int)InitialBoardPosition.X, (int)InitialBoardPosition.Y), new Vector2((int)boardSize.X, (int)boardSize.Y));
-            chip = new Chip(new Vector2(100, 100), chipSize, ColorChip.red, true);
+
+            //jugadores init.
+            players = new Player[4];
+
+            for(int i = 0; i < players.Length; i++)
+            {
+                players[i] = new Player((ColorChip)i, boardSize, chipSize);
+            }
+
+            //dados
+            dice = new Dice(new Vector2(100, 100), new Vector2(500, 100), ColorChip.red);
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            //cargando la imagen del tablero.
             board.Load(Content);
-            chip.Load(Content);
-            
+
+            //cargando el sprite de la ficha.
+            Chip.Load(Content);
+
+            //cargando el sprite de los dados.
+            Dice.Load(Content);
+
         }
 
         protected override void Update(GameTime gameTime)
         {
+            //si cerramos el juego.
             if (WantToExit())
                 Exit();
+
             //se actualiza la posicion del mouse.
             MouseHandeler.Position = MouseHandeler.GetPos();
 
+            
 
-            chip.Click(MouseHandeler.Position);
-
-                
             base.Update(gameTime);
         }
 
@@ -67,9 +87,13 @@ namespace ParchisFresh
 
             _spriteBatch.Begin();
 
+            //dibuja la tabla.
             board.Draw(_spriteBatch);
-            chip.Draw(_spriteBatch);
 
+            //dibujando todas las fichas del jugador.
+            DrawAllChips();
+
+            dice.Draw(_spriteBatch, new Vector2(0,0));
             _spriteBatch.End();
 
             base.Draw(gameTime);
@@ -80,6 +104,14 @@ namespace ParchisFresh
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 return true;
             else return false;
+        }
+
+        public void DrawAllChips()
+        {
+            foreach (Player p in players)
+            {
+                p.DrawAllChips(_spriteBatch);
+            }
         }
     }
 }

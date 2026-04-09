@@ -23,6 +23,7 @@ namespace ParchisFresh
         ColorChip color;
 
         Vector2 position;
+
         Vector2 size;
 
         bool atHome;
@@ -87,5 +88,10 @@ namespace ParchisFresh
         }
         #endregion
 
+        //movimiento ficha.
+        public void Move()
+        {
+            position.X += 1;
+        }
     }
 }

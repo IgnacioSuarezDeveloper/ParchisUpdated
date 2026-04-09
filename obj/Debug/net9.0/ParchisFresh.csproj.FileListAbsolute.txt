@@ -33,3 +33,5 @@ C:\Users\nache\OneDrive\Escritorio\ParchisFresh\obj\Debug\net9.0\ParchisFresh.pd
 C:\Users\nache\OneDrive\Escritorio\ParchisFresh\obj\Debug\net9.0\ParchisFresh.genruntimeconfig.cache
 C:\Users\nache\OneDrive\Escritorio\ParchisFresh\obj\Debug\net9.0\ref\ParchisFresh.dll
 C:\Users\nache\OneDrive\Escritorio\ParchisFresh\bin\Debug\net9.0\Content\chips.png
+C:\Users\nache\OneDrive\Escritorio\ParchisFresh\obj\Debug\net9.0\ParchisFresh.sourcelink.json
+C:\Users\nache\OneDrive\Escritorio\ParchisFresh\bin\Debug\net9.0\Content\dices.png

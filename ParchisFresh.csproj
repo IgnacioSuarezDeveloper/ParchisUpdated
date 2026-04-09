@@ -30,6 +30,9 @@
     <None Update="Content\chips.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Content\dices.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Content\tablero.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
