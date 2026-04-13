@@ -9,26 +9,29 @@ namespace ParchisFresh
 {
     internal class Dice
     {
+        #region properties
         static Texture2D dicesTexture;
-
-        ColorChip color;
-
         Vector2 position;
-
         Vector2 size;
-
-        int faceUp;
-
+        ColorChip color;
         static Random rnd = new Random();
-
+        int? faceUp;
+        bool enable;
         private int sixesInRow;
-
-        public int FaceUp
+        public bool Enable
+        {
+            get { return enable; }
+            set { enable = value; }
+        }
+        public int ?FaceUp
         {
             get { return faceUp; }
+            set {  faceUp = value;  }
         }
 
-        //constructor.
+        #endregion
+
+        #region metodos
         public Dice(Vector2 positionInit, Vector2 sizeInit, ColorChip Color)
         {
             if(Color == ColorChip.red ||Color == ColorChip.green)
@@ -44,19 +47,20 @@ namespace ParchisFresh
             position = positionInit;
             size = sizeInit;
             color = Color;
-            faceUp = 1;
-            
-        }
-
-        //carga imagen del dado.
+            faceUp = null;
+            enable = true;
+        }//Dice();
         public static void Load(ContentManager Content)
         {
-            dicesTexture = Content.Load<Texture2D>("dices.png");
-        }
 
-        //dibuaja el dado.
+            //carga la imagen del dado.
+            dicesTexture = Content.Load<Texture2D>("dices.png");
+
+        }//Load();
         public  void Draw(SpriteBatch _spriteBatch, Vector2 cut)
         {
+
+            //Dibuja el dado.
 
             // Definimos qué parte del sprite queremos (x, y, ancho, alto)
             Rectangle fuente = new Rectangle((int)cut.X * dicesTexture.Width / 6,(int)cut.Y ,dicesTexture.Width / 6 , dicesTexture.Height);
@@ -69,10 +73,11 @@ namespace ParchisFresh
                 fuente,
                 Color.White
             );
-        }
 
+        }//Draw();
         public bool Click(ref ColorChip turn)
         {
+
             //posicion del mouse.
             Vector2 mousePos = MouseHandeler.GetPos();
 
@@ -80,8 +85,9 @@ namespace ParchisFresh
             if (
                 mousePos.X >= position.X && mousePos.X <= position.X + size.X  &&
                 mousePos.Y >= position.Y && mousePos.Y <= position.Y + size.Y  && 
-                MouseHandeler.GetClick() && turn == this.color)
+                MouseHandeler.GetClick() && turn == this.color && enable == true )
             {
+                enable = false;
                 //se tira el dado.
                 faceUp = rnd.Next(1, 7);
 
@@ -89,27 +95,11 @@ namespace ParchisFresh
                 Debug.WriteLine($"dado tirado {faceUp}");
 
                 //dado habilitado.
-                if (faceUp == 6)
-                {
-                    sixesInRow++;
-                }
-                else
-                {
-                    if(turn < ColorChip.blue)
-                    {
-                        turn++;
-                    }
-                    else
-                    {
-                        turn = ColorChip.red;
-                    }
-                        sixesInRow = 0;
-                }
                 return true;
             }
             else { return false; }
 
-
-        }
+        }//Click();
+        #endregion
     }
 }

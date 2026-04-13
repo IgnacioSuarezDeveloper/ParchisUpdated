@@ -5,34 +5,38 @@ namespace ParchisFresh
 {
     internal static class MouseHandeler
     {
-        //estado del mouse.
-        static MouseState mouseState = new MouseState();
+        #region properties
 
-        //posicion del mouse.
-        static Vector2 position = new Vector2();
+        static MouseState mouseState = new MouseState();//estado del mouse.
+        static Vector2 position = new Vector2(); //posicion del mouse.
 
-        //obtiene la posicion del raton en x e y.
+        
+        #endregion
+
+        #region methods
         static public Vector2 GetPos()
         {
+            //obtiene la posicion del raton en x e y.
             mouseState = Mouse.GetState();
             return new Vector2(mouseState.X, mouseState.Y);
         }
 
-        //posicion del mouse.
         static public Vector2 Position
         {
+            //posicion del mouse.
             get { return position; }
             set { position = value; }
-        }
-        
-        //click mouse?
+        } 
+
         static public bool GetClick()
         {
+            //click mouse?
             if (mouseState.LeftButton == ButtonState.Pressed)
             {
                 return true;
             }
             else return false;
         }
+        #endregion
     }
 }

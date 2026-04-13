@@ -19,8 +19,12 @@ namespace ParchisFresh
         //tamaño casilla blanca
         private Vector2 TileSize;
   
-       
+        public Vector2 tileSize
+        {
+            get { return TileSize; }
+        }
         //constructor tablero.
+
         public Board(Vector2 _position, Vector2 _size)
         {
             position = _position;

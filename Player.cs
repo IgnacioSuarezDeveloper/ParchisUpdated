@@ -6,34 +6,28 @@ namespace ParchisFresh
     //para crear cada jugador de la partida con sus fichas del mismo color que el jugador.
     internal class Player
     {
-        //4 fichas.
-        Chip[] fichas;
-
-        Dice dice;
-        //color del jugador.
-        ColorChip color;
-
-        //posicion del jugador.
+        #region properties
         Vector2 position;
+        ColorChip color;
+        Chip[] fichas;
+        Dice dice;
 
-        //geter de Color.
+
         public ColorChip Color
         {
             get { return color; }
         }
-
-        //geter fichas.
         public Chip[] Fichas
         {
             get { return fichas; }
         }
-
         public Dice Dice
         {
             get { return dice; }
         }
+        #endregion
 
-        //constructor.
+        #region methods
         public Player(ColorChip _color, Vector2 boardSize, Vector2 chipSize)
         {
             //color jugador.
@@ -76,15 +70,16 @@ namespace ParchisFresh
             }
            
         }
-
-
-        //dibuja todas las fichas del jugador.
         public void DrawAllChips(SpriteBatch _spriteBatch)
         {
-            foreach(Chip c in fichas)
+            //dibuja todas las fichas del jugador.
+
+            foreach (Chip c in fichas)
             {
                 c.Draw(_spriteBatch);
             }
+
         }
+        #endregion
     }
 }
