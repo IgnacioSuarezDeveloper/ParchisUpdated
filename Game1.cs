@@ -1,7 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Security.Authentication;
 
 namespace ParchisFresh
 {
@@ -28,6 +30,9 @@ namespace ParchisFresh
 
         //numero de casillas que hay en el tablero.
         int NumberOfCells = 60;
+
+        List<int> indexFixed = new List<int>();
+
         #region methods
         public Game1()
         {
@@ -155,42 +160,65 @@ namespace ParchisFresh
             }
         }
 
-        public void ChangeTurn(ref ColorChip turn)
-        {
-            if (turn < ColorChip.blue)
-            {
-                turn++;
-            }
-            else
-            {
-                turn = ColorChip.red;
-            }
-        }
+        
         
         public  void CheckChipsInSameCell()
         {
             //comprobar cuantas fichas hay en la misma casilla.
             //para si hay mas de dos mostrar en la salida la casilla
             //en la que hay mas de dos para posteriormente arreglar la posicion de cada ficha.
+
+            //por cada casilla.
             for(int i = 0; i < NumberOfCells; i++)
             {
-                int count = 0;
+                //variable que almacena numero de fichas en la casilla.
+                int nFichasInCell = 0;
+
+                //recorre la fichas de cada jugador.
                 foreach(Player p in players)
                 {
+
+                    //coincide la casilla de la ficha con la i que es la casilla del tablero?
+                    //si si ahumento el la variable que almacena el numero de fichas  que es nFichasInCell
                     foreach(Chip c in p.Fichas)
                     {
                         if(c.Casilla == i)
                         {
-                            count++;
+                            nFichasInCell++;
                         }
                     }
+
                 }
-                if(count >= 2)
+                //hay almenos dos fichas en alguna casilla? y la casilla no ha sido registrada antes?
+                if(nFichasInCell >= 2 && !indexFixed.Contains(i))
                 {
-                    //Debug.WriteLine($"en la casilla {i} hay {count} jugadores.");
+                    indexFixed.Add(i);
+                    bool primera = false;
+
+                    bool segundo = false;
+
+                    foreach (Player p in players)
+                    {
+                        foreach (Chip c in p.Fichas)
+                        {
+                            if(c.Casilla == i && !primera)
+                            {
+                                c.position.X -= 20;
+                                primera = true;
+
+                            }else if (c.Casilla == i && !segundo)
+                            {
+
+                                c.position.X += 20;
+                                segundo = true;
+                            }
+                        }
+                    }
+                    nFichasInCell = 0;
                 }
             }
         }
+
         #endregion
     }
 }
