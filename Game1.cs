@@ -144,7 +144,7 @@ namespace ParchisFresh
         {
             foreach (Player p in players)
             {
-                p.Dice.Draw(_spriteBatch, new Vector2(0, 0));
+                p.Dice.Draw(_spriteBatch, p.Dice.FaceAnimation);
             }
         }
 
@@ -152,7 +152,7 @@ namespace ParchisFresh
         {
             foreach (Player p in players)
             {
-               bool click = p.Dice.Click(ref turn);
+               bool click = p.Dice.Click(ref turn, _spriteBatch);
                 if (click)
                 {
                     Debug.WriteLine(p.Dice.FaceUp);

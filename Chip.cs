@@ -85,6 +85,10 @@ namespace ParchisFresh
             {
 
             }
+            if (players[(int)turn].Dice.EndedAnimation)
+            {
+
+            
             //cuando hago click en esta ficha.
             if(this.atHome && faceUp != 5)
             {
@@ -165,8 +169,8 @@ namespace ParchisFresh
                 }
 
             }
-           
-            
+
+            }
         }
         public void Move()
         {

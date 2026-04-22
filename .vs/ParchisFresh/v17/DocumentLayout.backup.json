@@ -1,22 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\estudio\\Desktop\\ParchisUpdated\\",
+  "WorkspaceRootPath": "C:\\Users\\Ma\u00F1ana\\Desktop\\ParchisUpdated\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|c:\\users\\estudio\\desktop\\parchisupdated\\texto.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|solutionrelative:texto.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|c:\\users\\estudio\\desktop\\parchisupdated\\chip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|c:\\users\\ma\u00F1ana\\desktop\\parchisupdated\\chip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|solutionrelative:chip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|c:\\users\\estudio\\desktop\\parchisupdated\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|c:\\users\\ma\u00F1ana\\desktop\\parchisupdated\\dice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|solutionrelative:dice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|c:\\users\\ma\u00F1ana\\desktop\\parchisupdated\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|solutionrelative:game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|c:\\users\\estudio\\desktop\\parchisupdated\\dice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|solutionrelative:dice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|c:\\users\\ma\u00F1ana\\desktop\\parchisupdated\\texto.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|solutionrelative:texto.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,33 +26,29 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Chip.cs",
-              "DocumentMoniker": "C:\\Users\\estudio\\Desktop\\ParchisUpdated\\Chip.cs",
+              "DocumentMoniker": "C:\\Users\\Ma\u00F1ana\\Desktop\\ParchisUpdated\\Chip.cs",
               "RelativeDocumentMoniker": "Chip.cs",
-              "ToolTip": "C:\\Users\\estudio\\Desktop\\ParchisUpdated\\Chip.cs",
+              "ToolTip": "C:\\Users\\Ma\u00F1ana\\Desktop\\ParchisUpdated\\Chip.cs",
               "RelativeToolTip": "Chip.cs",
-              "ViewState": "AgIAAG0AAAAAAAAAAAAswFgAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAowFwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-10T16:44:25.838Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "texto.txt",
-              "DocumentMoniker": "C:\\Users\\estudio\\Desktop\\ParchisUpdated\\texto.txt",
+              "DocumentMoniker": "C:\\Users\\Ma\u00F1ana\\Desktop\\ParchisUpdated\\texto.txt",
               "RelativeDocumentMoniker": "texto.txt",
-              "ToolTip": "C:\\Users\\estudio\\Desktop\\ParchisUpdated\\texto.txt",
+              "ToolTip": "C:\\Users\\Ma\u00F1ana\\Desktop\\ParchisUpdated\\texto.txt",
               "RelativeToolTip": "texto.txt",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
@@ -63,24 +59,24 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Game1.cs",
-              "DocumentMoniker": "C:\\Users\\estudio\\Desktop\\ParchisUpdated\\Game1.cs",
+              "DocumentMoniker": "C:\\Users\\Ma\u00F1ana\\Desktop\\ParchisUpdated\\Game1.cs",
               "RelativeDocumentMoniker": "Game1.cs",
-              "ToolTip": "C:\\Users\\estudio\\Desktop\\ParchisUpdated\\Game1.cs",
+              "ToolTip": "C:\\Users\\Ma\u00F1ana\\Desktop\\ParchisUpdated\\Game1.cs",
               "RelativeToolTip": "Game1.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAgwGEAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAEoAAAAAAAAAAAApwGIAAABhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-10T16:47:17.8Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Dice.cs",
-              "DocumentMoniker": "C:\\Users\\estudio\\Desktop\\ParchisUpdated\\Dice.cs",
+              "DocumentMoniker": "C:\\Users\\Ma\u00F1ana\\Desktop\\ParchisUpdated\\Dice.cs",
               "RelativeDocumentMoniker": "Dice.cs",
-              "ToolTip": "C:\\Users\\estudio\\Desktop\\ParchisUpdated\\Dice.cs",
+              "ToolTip": "C:\\Users\\Ma\u00F1ana\\Desktop\\ParchisUpdated\\Dice.cs",
               "RelativeToolTip": "Dice.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFkAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAIwGQAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-10T16:45:57.63Z",
               "EditorCaption": ""

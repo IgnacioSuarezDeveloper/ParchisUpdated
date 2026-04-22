@@ -1,3 +1,5 @@
 ﻿paso siguiente line 89 en chip cambiar el if para que no cambie de turno cuando no es deseado.
 creo que se soluciona creando una variable que sea all at home y que solo haga ese if si all 
 at home si no no que haga el segundo.
+
+hacer que el face up se actualice despues de tirar el dado.
