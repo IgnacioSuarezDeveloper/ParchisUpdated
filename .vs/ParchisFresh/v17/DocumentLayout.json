@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\nache\\OneDrive\\Escritorio\\ParchisUpdated\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|c:\\users\\nache\\onedrive\\escritorio\\parchisupdated\\dice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|solutionrelative:dice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|c:\\users\\nache\\onedrive\\escritorio\\parchisupdated\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|solutionrelative:menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|c:\\users\\nache\\onedrive\\escritorio\\parchisupdated\\chip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|solutionrelative:chip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|c:\\users\\nache\\onedrive\\escritorio\\parchisupdated\\dice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|solutionrelative:dice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|c:\\users\\nache\\onedrive\\escritorio\\parchisupdated\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,6 +17,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|c:\\users\\nache\\onedrive\\escritorio\\parchisupdated\\texto.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|solutionrelative:texto.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|c:\\users\\nache\\onedrive\\escritorio\\parchisupdated\\chip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|solutionrelative:chip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,20 +30,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Chip.cs",
               "DocumentMoniker": "C:\\Users\\nache\\OneDrive\\Escritorio\\ParchisUpdated\\Chip.cs",
               "RelativeDocumentMoniker": "Chip.cs",
               "ToolTip": "C:\\Users\\nache\\OneDrive\\Escritorio\\ParchisUpdated\\Chip.cs",
               "RelativeToolTip": "Chip.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAQwFgAAAB0AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-10T16:44:25.838Z",
               "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Menu.cs",
+              "DocumentMoniker": "C:\\Users\\nache\\OneDrive\\Escritorio\\ParchisUpdated\\Menu.cs",
+              "RelativeDocumentMoniker": "Menu.cs",
+              "ToolTip": "C:\\Users\\nache\\OneDrive\\Escritorio\\ParchisUpdated\\Menu.cs",
+              "RelativeToolTip": "Menu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-23T18:10:58.993Z",
               "EditorCaption": ""
             },
             {
@@ -70,13 +87,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Dice.cs",
               "DocumentMoniker": "C:\\Users\\nache\\OneDrive\\Escritorio\\ParchisUpdated\\Dice.cs",
               "RelativeDocumentMoniker": "Dice.cs",
               "ToolTip": "C:\\Users\\nache\\OneDrive\\Escritorio\\ParchisUpdated\\Dice.cs",
               "RelativeToolTip": "Dice.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-10T16:45:57.63Z",
               "EditorCaption": ""
