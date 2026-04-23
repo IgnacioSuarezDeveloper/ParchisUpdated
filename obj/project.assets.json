@@ -295,23 +295,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Mañana\\.nuget\\packages\\": {},
+    "C:\\Users\\nache\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mañana\\Desktop\\ParchisUpdated\\ParchisFresh.csproj",
+      "projectUniqueName": "C:\\Users\\nache\\OneDrive\\Escritorio\\ParchisUpdated\\ParchisFresh.csproj",
       "projectName": "ParchisFresh",
-      "projectPath": "C:\\Users\\Mañana\\Desktop\\ParchisUpdated\\ParchisFresh.csproj",
-      "packagesPath": "C:\\Users\\Mañana\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mañana\\Desktop\\ParchisUpdated\\obj\\",
+      "projectPath": "C:\\Users\\nache\\OneDrive\\Escritorio\\ParchisUpdated\\ParchisFresh.csproj",
+      "packagesPath": "C:\\Users\\nache\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nache\\OneDrive\\Escritorio\\ParchisUpdated\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Mañana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\nache\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -370,7 +370,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.310/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.312/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

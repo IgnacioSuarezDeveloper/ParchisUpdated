@@ -27,9 +27,14 @@ namespace ParchisFresh
         ColorChip color;
         bool atHome;
         int ?casilla;
+        public static bool AllAtHome;
         public int ? Casilla
         {
             get { return casilla; }
+        }
+        public bool AtHome
+        {
+            get { return atHome; }
         }
         #endregion
 
@@ -51,6 +56,8 @@ namespace ParchisFresh
 
             //casilla en la que esta 
             casilla = null;
+
+            AllAtHome = true;
             
         }
         public static void Load(ContentManager Content)
@@ -87,10 +94,17 @@ namespace ParchisFresh
             }
             if (players[(int)turn].Dice.EndedAnimation)
             {
-
-            
+                foreach (Chip c in players[(int)turn].Fichas)
+                {
+                    if (!c.AtHome)
+                    {
+                        AllAtHome = false;
+                        break;
+                    }
+                    else AllAtHome = true;
+                }
             //cuando hago click en esta ficha.
-            if(this.atHome && faceUp != 5)
+            if( faceUp != 5 && AllAtHome)
             {
                 if (turn < ColorChip.blue)
                 {

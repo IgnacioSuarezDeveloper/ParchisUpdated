@@ -3,3 +3,7 @@ creo que se soluciona creando una variable que sea all at home y que solo haga e
 at home si no no que haga el segundo.
 
 hacer que el face up se actualice despues de tirar el dado.
+
+
+
+que no cambie de turno cuando se tira el dado y hay una ficha fuera de casa que no ha sido clikada.
