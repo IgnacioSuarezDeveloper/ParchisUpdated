@@ -127,7 +127,7 @@ namespace ParchisFresh
             {
                 Debug.WriteLine(casilla);
                 //si se hace click en ficha.
-                if (this.atHome)
+                if (this.atHome && faceUp == 5)
                 {
                     //casilla de salida para cada color
                     if(color == ColorChip.red)
@@ -165,22 +165,39 @@ namespace ParchisFresh
 
                     //fuera de casa.
                     atHome = false;
-                }
-
-                //cambio de turno
-                if (turn < ColorChip.blue)
-                {
-                    turn++;
-                }
-                else
-                {
-                    turn = ColorChip.red;
-                    foreach (Player p in players)
+                        //cambio de turno
+                        if (turn < ColorChip.blue)
+                        {
+                            turn++;
+                        }
+                        else
+                        {
+                            turn = ColorChip.red;
+                            foreach (Player p in players)
+                            {
+                                p.Dice.Enable = true;
+                                p.Dice.FaceUp = null;
+                            }
+                        }
+                }else if (!this.atHome)
                     {
-                        p.Dice.Enable = true;
-                        p.Dice.FaceUp = null;
+                        //cambio de turno
+                        if (turn < ColorChip.blue)
+                        {
+                            turn++;
+                        }
+                        else
+                        {
+                            turn = ColorChip.red;
+                            foreach (Player p in players)
+                            {
+                                p.Dice.Enable = true;
+                                p.Dice.FaceUp = null;
+                            }
+                        }
                     }
-                }
+
+               
 
             }
 
