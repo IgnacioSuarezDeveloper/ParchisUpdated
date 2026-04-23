@@ -89,17 +89,19 @@ namespace ParchisFresh
 
         public async void DiceAnimation(SpriteBatch _spriteBatch, Vector2 cut)
         {
+            endedAnimation = false;
             for(int i = 0; i < 6; i++)
             {
                 Random rnd = new Random();
 
                 //numero entre 0 y 4.
-                int rndNumber = rnd.Next(0, 6);
+                faceUp = rnd.Next(0, 6);
 
-                Debug.WriteLine($"{rndNumber + 1} \n");
+                Debug.WriteLine($"{faceUp + 1} \n");
 
-                faceAnimation.X = rndNumber;
+                faceAnimation.X = (int)faceUp;
 
+                faceUp += 1;
                 await (Task.Delay(300));
                
             }
@@ -119,11 +121,14 @@ namespace ParchisFresh
             {
                 DiceAnimation(_spriteBatch, faceAnimation);
                 enable = false;
-                //se tira el dado.
-                faceUp = rnd.Next(1, 7);
+                
+                
 
                 //muestra la cara arriba en el debug console.
-                Debug.WriteLine($"dado tirado {faceUp}");
+                if(faceUp != null)
+                {
+                    Debug.WriteLine($"dado tirado {faceUp}");
+                }
 
                 //dado habilitado.
                 return true;

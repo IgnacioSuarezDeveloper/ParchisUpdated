@@ -45,9 +45,6 @@ namespace ParchisFresh
 
             _graphics.ApplyChanges();
         }
-
-
-
         protected override void Initialize()
         {
             //crea objeto tablero.
@@ -160,8 +157,6 @@ namespace ParchisFresh
             }
         }
 
-        
-        
         public  void CheckChipsInSameCell()
         {
             //comprobar cuantas fichas hay en la misma casilla.

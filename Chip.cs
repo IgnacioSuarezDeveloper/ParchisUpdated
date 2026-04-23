@@ -177,9 +177,9 @@ namespace ParchisFresh
 
             //movimiento ficha.
             position.X += 1;
+
         }
         #endregion
-
 
     }
 }
