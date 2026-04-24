@@ -32,11 +32,10 @@
               "RelativeDocumentMoniker": "Chip.cs",
               "ToolTip": "C:\\Users\\Ma\u00F1ana\\Desktop\\ParchisUpdated\\Chip.cs",
               "RelativeToolTip": "Chip.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-10T16:44:25.838Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -48,8 +47,7 @@
               "RelativeToolTip": "Game1.cs",
               "ViewState": "AgIAAE0AAAAAAAAAAAApwCMAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-10T16:47:17.8Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-10T16:47:17.8Z"
             },
             {
               "$type": "Document",
@@ -61,8 +59,7 @@
               "RelativeToolTip": "Dice.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAzwFkAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-10T16:45:57.63Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-10T16:45:57.63Z"
             }
           ]
         }
