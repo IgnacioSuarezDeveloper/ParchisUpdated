@@ -27,9 +27,14 @@ namespace ParchisFresh
         ColorChip color;
         bool atHome;
         int ?casilla;
+        public static bool AllAtHome;
         public int ? Casilla
         {
             get { return casilla; }
+        }
+        public bool AtHome
+        {
+            get { return atHome; }
         }
         #endregion
 
@@ -51,6 +56,8 @@ namespace ParchisFresh
 
             //casilla en la que esta 
             casilla = null;
+
+            AllAtHome = true;
             
         }
         public static void Load(ContentManager Content)
@@ -87,10 +94,17 @@ namespace ParchisFresh
             }
             if (players[(int)turn].Dice.EndedAnimation)
             {
-
-            
+                foreach (Chip c in players[(int)turn].Fichas)
+                {
+                    if (!c.AtHome)
+                    {
+                        AllAtHome = false;
+                        break;
+                    }
+                    else AllAtHome = true;
+                }
             //cuando hago click en esta ficha.
-            if(this.atHome && faceUp != 5)
+            if( faceUp != 5 && AllAtHome)
             {
                 if (turn < ColorChip.blue)
                 {
@@ -113,7 +127,7 @@ namespace ParchisFresh
             {
                 Debug.WriteLine(casilla);
                 //si se hace click en ficha.
-                if (this.atHome)
+                if (this.atHome && faceUp == 5)
                 {
                     //casilla de salida para cada color
                     if(color == ColorChip.red)
@@ -151,22 +165,39 @@ namespace ParchisFresh
 
                     //fuera de casa.
                     atHome = false;
-                }
-
-                //cambio de turno
-                if (turn < ColorChip.blue)
-                {
-                    turn++;
-                }
-                else
-                {
-                    turn = ColorChip.red;
-                    foreach (Player p in players)
+                        //cambio de turno
+                        if (turn < ColorChip.blue)
+                        {
+                            turn++;
+                        }
+                        else
+                        {
+                            turn = ColorChip.red;
+                            foreach (Player p in players)
+                            {
+                                p.Dice.Enable = true;
+                                p.Dice.FaceUp = null;
+                            }
+                        }
+                }else if (!this.atHome)
                     {
-                        p.Dice.Enable = true;
-                        p.Dice.FaceUp = null;
+                        //cambio de turno
+                        if (turn < ColorChip.blue)
+                        {
+                            turn++;
+                        }
+                        else
+                        {
+                            turn = ColorChip.red;
+                            foreach (Player p in players)
+                            {
+                                p.Dice.Enable = true;
+                                p.Dice.FaceUp = null;
+                            }
+                        }
                     }
-                }
+
+               
 
             }
 

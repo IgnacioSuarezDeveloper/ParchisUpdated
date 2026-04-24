@@ -101,10 +101,11 @@ namespace ParchisFresh
 
                 faceAnimation.X = (int)faceUp;
 
-                faceUp += 1;
+                
                 await (Task.Delay(300));
                
             }
+            faceUp += 1;
             endedAnimation = true;
         }
         public bool Click(ref ColorChip turn, SpriteBatch _spriteBatch)
@@ -121,8 +122,11 @@ namespace ParchisFresh
             {
                 DiceAnimation(_spriteBatch, faceAnimation);
                 enable = false;
+
                 
-                
+
+                //se tira el dado.
+
 
                 //muestra la cara arriba en el debug console.
                 if(faceUp != null)

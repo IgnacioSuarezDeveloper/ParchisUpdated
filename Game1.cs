@@ -18,6 +18,7 @@ namespace ParchisFresh
         private Vector2 boardSize = new Vector2(1100, 1100);
         private Vector2 InitialBoardPosition = new Vector2(0, 0);
 
+        SpriteFont miFuente;
         //tamaño de las fichas.
         private Vector2 chipSize = new Vector2(50, 50);
 
@@ -32,6 +33,9 @@ namespace ParchisFresh
         int NumberOfCells = 60;
 
         List<int> indexFixed = new List<int>();
+        private Vector2 vectorMinusButton;
+        private Vector2 vectorPlusButton;
+        private Vector2 vectorOkButton;
 
         #region methods
         public Game1()
@@ -46,12 +50,22 @@ namespace ParchisFresh
             _graphics.ApplyChanges();
         }
         protected override void Initialize()
-        {
+
+        { 
+            InitMenuVariables();
+
+            miFuente = Content.Load<SpriteFont>("SpriteFont1");            //cargando los esprites del menu.
+            Menu.LoadMenuSprites(Content);
+           
+            //inicializando los botones.
+            Menu.InitializeButtons(vectorMinusButton,vectorPlusButton,vectorOkButton);
+
             //crea objeto tablero.
             board = new Board(new Vector2((int)InitialBoardPosition.X, (int)InitialBoardPosition.Y), new Vector2((int)boardSize.X, (int)boardSize.Y));
 
             //jugadores init.
             players = new Player[4];
+
 
             for(int i = 0; i < players.Length; i++)
             {
@@ -117,6 +131,13 @@ namespace ParchisFresh
             //dibujando todos los dados.
             DrawAllDices();
 
+            Menu.DrawLeftButton(_spriteBatch, Menu.MInusButtonPositionxy.X - 300, Menu.MInusButtonPositionxy.Y, (int)boardSize.X, (int)boardSize.Y);
+
+            Menu.DrawRightButton(_spriteBatch,Menu.MAxButtonPositionxy.X + 100, Menu.MAxButtonPositionxy.Y, (int)boardSize.X, (int)boardSize.Y);
+
+            Menu.DrawOkButton(_spriteBatch, Menu.OKButtonPositionxy.X + 30, Menu.OKButtonPositionxy.Y, (int)boardSize.X, (int)boardSize.Y);
+
+            _spriteBatch.DrawString(miFuente, Menu.NPlayers.ToString(), new Vector2((boardSize.X / 2) - 10, (boardSize.Y / 2) - 60), Color.White);
             _spriteBatch.End();
 
             base.Draw(gameTime);
@@ -213,6 +234,17 @@ namespace ParchisFresh
                 }
             }
         }
+
+        public void InitMenuVariables()
+        {
+            Menu.NPlayers = 2;
+            int buttonsOfset = 100;
+            vectorMinusButton = new System.Numerics.Vector2((boardSize.X / 2) + (boardSize.X / 10) - buttonsOfset, (boardSize.Y / 2) - (boardSize.Y / 20));
+            vectorPlusButton = new System.Numerics.Vector2((boardSize.X / 2) + (boardSize.X / 10), (boardSize.Y / 2) - (boardSize.Y / 20));
+            vectorOkButton = new System.Numerics.Vector2((boardSize.X / 2) - 80, (boardSize.Y / 2) + 200);
+
+        }
+
 
         #endregion
     }
