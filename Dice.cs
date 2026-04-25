@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Diagnostics;
+using System.Threading.Tasks;
 
 
 namespace ParchisFresh
@@ -18,10 +19,20 @@ namespace ParchisFresh
         int? faceUp;
         bool enable;
         private int sixesInRow;
+        Vector2 faceAnimation;
+        bool endedAnimation = true;
+        public bool EndedAnimation
+        {
+            get { return endedAnimation; }
+        }
         public bool Enable
         {
             get { return enable; }
             set { enable = value; }
+        }
+        public Vector2 FaceAnimation
+        {
+            get { return faceAnimation; }
         }
         public int ?FaceUp
         {
@@ -50,6 +61,7 @@ namespace ParchisFresh
             color = Color;
             faceUp = null;
             enable = true;
+
         }//Dice();
         public static void Load(ContentManager Content)
         {
@@ -61,8 +73,7 @@ namespace ParchisFresh
         public  void Draw(SpriteBatch _spriteBatch, Vector2 cut)
         {
 
-            //Dibuja el dado.
-
+            
             // Definimos qué parte del sprite queremos (x, y, ancho, alto)
             Rectangle fuente = new Rectangle((int)cut.X * dicesTexture.Width / 6,(int)cut.Y ,dicesTexture.Width / 6 , dicesTexture.Height);
 
@@ -76,7 +87,29 @@ namespace ParchisFresh
             );
 
         }//Draw();
-        public bool Click(ref ColorChip turn)
+
+        public async void DiceAnimation(SpriteBatch _spriteBatch, Vector2 cut)
+        {
+            endedAnimation = false;
+            for(int i = 0; i < 6; i++)
+            {
+                Random rnd = new Random();
+
+                //numero entre 0 y 4.
+                faceUp = rnd.Next(0, 6);
+
+                Debug.WriteLine($"{faceUp + 1} \n");
+
+                faceAnimation.X = (int)faceUp;
+
+                
+                await (Task.Delay(1));
+               
+            }
+            faceUp += 1;
+            endedAnimation = true;
+        }
+        public bool Click(ref ColorChip turn, SpriteBatch _spriteBatch)
         {
 
             //posicion del mouse.
@@ -88,12 +121,19 @@ namespace ParchisFresh
                 mousePos.Y >= position.Y && mousePos.Y <= position.Y + size.Y  && 
                 MouseHandeler.GetClick() && turn == this.color && enable == true )
             {
+                DiceAnimation(_spriteBatch, faceAnimation);
                 enable = false;
+
+                
+
                 //se tira el dado.
-                faceUp = rnd.Next(1, 7);
+
 
                 //muestra la cara arriba en el debug console.
-                Debug.WriteLine($"dado tirado {faceUp}");
+                if(faceUp != null)
+                {
+                    Debug.WriteLine($"dado tirado {faceUp}");
+                }
 
                 //dado habilitado.
                 return true;

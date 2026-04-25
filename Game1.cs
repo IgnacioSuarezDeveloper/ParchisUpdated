@@ -18,6 +18,7 @@ namespace ParchisFresh
         private Vector2 boardSize = new Vector2(1100, 1100);
         private Vector2 InitialBoardPosition = new Vector2(0, 0);
 
+        SpriteFont miFuente;
         //tamaño de las fichas.
         private Vector2 chipSize = new Vector2(50, 50);
 
@@ -32,6 +33,9 @@ namespace ParchisFresh
         int NumberOfCells = 60;
 
         List<int> indexFixed = new List<int>();
+        private Vector2 vectorMinusButton;
+        private Vector2 vectorPlusButton;
+        private Vector2 vectorOkButton;
 
         #region methods
         public Game1()
@@ -47,12 +51,22 @@ namespace ParchisFresh
         }
 
         protected override void Initialize()
-        {
+
+        { 
+            InitMenuVariables();
+
+            miFuente = Content.Load<SpriteFont>("File");            //cargando los esprites del menu.
+            Menu.LoadMenuSprites(Content);
+           
+            //inicializando los botones.
+            Menu.InitializeButtons(vectorMinusButton,vectorPlusButton,vectorOkButton);
+
             //crea objeto tablero.
             board = new Board(new Vector2((int)InitialBoardPosition.X, (int)InitialBoardPosition.Y), new Vector2((int)boardSize.X, (int)boardSize.Y));
 
             //jugadores init.
             players = new Player[4];
+
 
             for(int i = 0; i < players.Length; i++)
             {
@@ -118,6 +132,7 @@ namespace ParchisFresh
             //dibujando todos los dados.
             DrawAllDices();
 
+           
             _spriteBatch.End();
 
             base.Draw(gameTime);
@@ -142,7 +157,7 @@ namespace ParchisFresh
         {
             foreach (Player p in players)
             {
-                p.Dice.Draw(_spriteBatch, new Vector2(0, 0));
+                p.Dice.Draw(_spriteBatch, p.Dice.FaceAnimation);
             }
         }
 
@@ -150,7 +165,7 @@ namespace ParchisFresh
         {
             foreach (Player p in players)
             {
-               bool click = p.Dice.Click(ref turn);
+               bool click = p.Dice.Click(ref turn, _spriteBatch);
                 if (click)
                 {
                    //Debug.WriteLine(p.Dice.FaceUp);
@@ -232,7 +247,16 @@ namespace ParchisFresh
             return count;   
         }
 
-        
+        public void InitMenuVariables()
+        {
+            Menu.NPlayers = 2;
+            int buttonsOfset = 100;
+            vectorMinusButton = new System.Numerics.Vector2((boardSize.X / 2) + (boardSize.X / 10) - buttonsOfset, (boardSize.Y / 2) - (boardSize.Y / 20));
+            vectorPlusButton = new System.Numerics.Vector2((boardSize.X / 2) + (boardSize.X / 10), (boardSize.Y / 2) - (boardSize.Y / 20));
+            vectorOkButton = new System.Numerics.Vector2((boardSize.X / 2) - 80, (boardSize.Y / 2) + 200);
+
+        }
+
 
         #endregion
     }

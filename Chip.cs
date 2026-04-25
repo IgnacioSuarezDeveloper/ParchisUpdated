@@ -27,6 +27,7 @@ namespace ParchisFresh
         ColorChip color;
         bool atHome;
         int ?casilla;
+        public static bool AllAtHome;
         public int ? Casilla
         {
             get { return casilla; }
@@ -57,6 +58,8 @@ namespace ParchisFresh
 
             //casilla en la que esta 
             casilla = null;
+
+            AllAtHome = true;
             
         }
         public static void Load(ContentManager Content)
@@ -87,13 +90,19 @@ namespace ParchisFresh
         }
         public void Click(Vector2 MousePos, ref ColorChip turn, int faceUp, ref Player[] players, Vector2 boardSize , bool allAtHome, int nOfChipsBeguining)
         {
-            if (MouseHandeler.GetClick())
+            if (players[(int)turn].Dice.EndedAnimation)
             {
-
-            }
-
+                foreach (Chip c in players[(int)turn].Fichas)
+                {
+                    if (!c.AtHome)
+                    {
+                        AllAtHome = false;
+                        break;
+                    }
+                    else AllAtHome = true;
+                }
             //cuando hago click en esta ficha.
-            if(allAtHome && faceUp != 5)
+            if( faceUp != 5 && AllAtHome)
             {
                 if (turn < ColorChip.blue)
                 {
@@ -114,10 +123,34 @@ namespace ParchisFresh
                turn == color
               )
             {
-                //Debug.WriteLine(casilla);
-                //si se hace click en ficha.
-                if (this.atHome && faceUp == 5 && nOfChipsBeguining <= 1)
+                    //Debug.WriteLine(casilla);
+                    //si se hace click en ficha.
+                    int nConcurrentChips = 0;
+                if (this.atHome && faceUp == 5)
                 {
+                        foreach (Chip C in players[(int)turn].Fichas)
+                        {
+                           
+
+                                if(color == ColorChip.red && C.casilla == 0)
+                                {
+                                    nConcurrentChips++;
+ 
+                                }else if (color == ColorChip.green && C.casilla == 15)
+                                {
+                                    nConcurrentChips++;
+
+                                }else if(color == ColorChip.yellow && C.casilla == 30)
+                                {
+                                    nConcurrentChips++;
+
+                                }else if(color == ColorChip.blue && C.casilla == 45)
+                                {
+                                    nConcurrentChips++;
+                                }
+                           
+                        }
+                        
                     //casilla de salida para cada color
                     if(color == ColorChip.red)
                     {
@@ -133,57 +166,73 @@ namespace ParchisFresh
                     {
                         casilla = 45;
                     }
-
                     //posicion de salida para cada ficha.
-                    if (color == ColorChip.red || color == ColorChip.green)
+                    if (color == ColorChip.red && nConcurrentChips < 2 || color == ColorChip.green && nConcurrentChips < 2)
                     {
                         int ofset = 400 - (int)position.X;
                         position.X += ofset;
                     }
-                    else if (color == ColorChip.blue || color == ColorChip.yellow)
+                    else if (color == ColorChip.blue && nConcurrentChips < 2 || color == ColorChip.yellow && nConcurrentChips < 2)
                     {
                         position.X = position.X - ( (int)position.X - 650 );
                     }
-                    if (color == ColorChip.red || color == ColorChip.blue)
+                    if (color == ColorChip.red && nConcurrentChips < 2 || color == ColorChip.blue && nConcurrentChips < 2)
                     {
                         position.Y += 40;
                     }
-                    else if (color == ColorChip.green || color == ColorChip.yellow)
+                    else if (color == ColorChip.green && nConcurrentChips < 2|| color == ColorChip.yellow && nConcurrentChips < 2)
                     {
                         position.Y -= 40;
                     }
 
                     //fuera de casa.
                     atHome = false;
-                }
-
-                //cambio de turno
-                if (turn < ColorChip.blue)
-                {
-                    turn++;
-                }
-                else
-                {
-                    turn = ColorChip.red;
-                    foreach (Player p in players)
+                        //cambio de turno
+                        if(nConcurrentChips < 2)
+                        {
+                            if (turn < ColorChip.blue)
+                            {
+                                turn++;
+                            }
+                            else
+                            {
+                                turn = ColorChip.red;
+                                foreach (Player p in players)
+                                {
+                                    p.Dice.Enable = true;
+                                    p.Dice.FaceUp = null;
+                                }
+                            }
+                        }
+                }else if (!this.atHome)
                     {
-                        p.Dice.Enable = true;
-                        p.Dice.FaceUp = null;
+                        //cambio de turno
+                        if (turn < ColorChip.blue)
+                        {
+                            turn++;
+                        }
+                        else
+                        {
+                            turn = ColorChip.red;
+                            foreach (Player p in players)
+                            {
+                                p.Dice.Enable = true;
+                                p.Dice.FaceUp = null;
+                            }
+                        }
                     }
-                }
+            }
 
             }
-           
-            
         }
         public void Move()
         {
 
             //movimiento ficha.
             position.X += 1;
+
         }
         #endregion
-
 
     }
 }
