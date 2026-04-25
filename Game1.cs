@@ -46,8 +46,6 @@ namespace ParchisFresh
             _graphics.ApplyChanges();
         }
 
-
-
         protected override void Initialize()
         {
             //crea objeto tablero.
@@ -96,7 +94,7 @@ namespace ParchisFresh
             {
                 if(players[(int)turn].Dice.FaceUp != null)
                 {
-                    c.Click(MouseHandeler.Position, ref turn, (int)players[(int)turn].Dice.FaceUp,ref players, boardSize);
+                    c.Click(MouseHandeler.Position, ref turn, (int)players[(int)turn].Dice.FaceUp,ref players, boardSize, players[(int)turn].AllAtHome(), AmountOfChipsInCell((int)turn * 15 ));
                 }
             }
 
@@ -155,13 +153,11 @@ namespace ParchisFresh
                bool click = p.Dice.Click(ref turn);
                 if (click)
                 {
-                    Debug.WriteLine(p.Dice.FaceUp);
+                   //Debug.WriteLine(p.Dice.FaceUp);
                 }
             }
         }
 
-        
-        
         public  void CheckChipsInSameCell()
         {
             //comprobar cuantas fichas hay en la misma casilla.
@@ -218,6 +214,25 @@ namespace ParchisFresh
                 }
             }
         }
+
+        public int AmountOfChipsInCell(int casilla)
+        {
+            int count = 0;
+                foreach(Player p in players)
+                {
+                    foreach(Chip c in p.Fichas)
+                    {
+                        if(c.Casilla == casilla)
+                        {
+                            ++count;
+                        }
+                    }
+                }
+            
+            return count;   
+        }
+
+        
 
         #endregion
     }

@@ -80,6 +80,17 @@ namespace ParchisFresh
             }
 
         }
+        public bool AllAtHome()
+        {
+            foreach(Chip c in fichas)
+            {
+                if (!c.AtHome)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
         #endregion
     }
 }

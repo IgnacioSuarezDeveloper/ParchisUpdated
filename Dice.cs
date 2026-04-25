@@ -32,6 +32,7 @@ namespace ParchisFresh
         #endregion
 
         #region metodos
+
         public Dice(Vector2 positionInit, Vector2 sizeInit, ColorChip Color)
         {
             if(Color == ColorChip.red ||Color == ColorChip.green)
@@ -100,6 +101,7 @@ namespace ParchisFresh
             else { return false; }
 
         }//Click();
+
         #endregion
     }
 }

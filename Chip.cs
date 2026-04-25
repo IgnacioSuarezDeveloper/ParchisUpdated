@@ -31,6 +31,10 @@ namespace ParchisFresh
         {
             get { return casilla; }
         }
+        public bool AtHome
+        {
+            get { return atHome; }
+        }
         #endregion
 
         #region methods
@@ -48,6 +52,8 @@ namespace ParchisFresh
 
             //esta en casa?
             this.atHome = atHome;
+
+            
 
             //casilla en la que esta 
             casilla = null;
@@ -79,14 +85,15 @@ namespace ParchisFresh
             );
 
         }
-        public void Click(Vector2 MousePos, ref ColorChip turn, int faceUp, ref Player[] players, Vector2 boardSize)
+        public void Click(Vector2 MousePos, ref ColorChip turn, int faceUp, ref Player[] players, Vector2 boardSize , bool allAtHome, int nOfChipsBeguining)
         {
             if (MouseHandeler.GetClick())
             {
 
             }
+
             //cuando hago click en esta ficha.
-            if(this.atHome && faceUp != 5)
+            if(allAtHome && faceUp != 5)
             {
                 if (turn < ColorChip.blue)
                 {
@@ -107,14 +114,15 @@ namespace ParchisFresh
                turn == color
               )
             {
-                Debug.WriteLine(casilla);
+                //Debug.WriteLine(casilla);
                 //si se hace click en ficha.
-                if (this.atHome)
+                if (this.atHome && faceUp == 5 && nOfChipsBeguining <= 1)
                 {
                     //casilla de salida para cada color
                     if(color == ColorChip.red)
                     {
                         casilla = 0;
+
                     }else if(color == ColorChip.green)
                     {
                         casilla = 15;
