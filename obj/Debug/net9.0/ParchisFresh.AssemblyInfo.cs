@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ParchisFresh")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c58127c57a63b2b4c5c8b5f1b494b5513e41e442")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b13fd1c2d96e318f8c9e7d2920f4f0d71f210f80")]
 [assembly: System.Reflection.AssemblyProductAttribute("ParchisFresh")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ParchisFresh")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

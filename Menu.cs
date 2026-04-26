@@ -19,69 +19,6 @@ namespace ParchisFresh
         #endregion
 
         #region methods
-        public static void LoadMenuSprites(ContentManager Content)
-        {
-
-            //cargando el sprite del parchis.
-
-
-            //cargando el sprite de botones.
-
-            buttonsSprite = Content.Load<Texture2D>("buttons.png");
-
-            //cargando el boton de okay
-
-            bottonOkSprite = Content.Load<Texture2D>("okButton.png");
-
-            //cargando sprite de dados.
-
-        }
-
-        public static void DrawLeftButton(SpriteBatch _spriteBatch, float x, float y, int BoardWidth, int BoardHeight)
-        {
-            // Definimos qué parte del sprite queremos (x, y, ancho, alto)
-            Rectangle fuente = new Rectangle(345, 430, 240, 190);
-
-            // Dibujamos
-            _spriteBatch.Draw(
-                buttonsSprite,
-               new Rectangle((int)x, (int)y, BoardWidth / 10, BoardHeight / 10),
-                fuente,
-                Color.White
-            );
-        }//ficha azul.
-
-        //dibujar boton derecho.
-        public static void DrawRightButton(SpriteBatch _spriteBatch, float x, float y, int BoardWidth, int BoardHeight)
-        {
-            // Definimos qué parte del sprite queremos (x, y, ancho, alto)
-            Rectangle fuente = new Rectangle(345 + 610, 430, 240, 190);
-
-            // Dibujamos
-            _spriteBatch.Draw(
-                buttonsSprite,
-               new Rectangle((int)x, (int)y, BoardWidth / 10, BoardHeight / 10),
-                fuente,
-                Color.White
-            );
-        }//ficha azul.
-
-        //dibujar boton de okay.
-        public static void DrawOkButton(SpriteBatch _spriteBatch, float x, float y, int BoardWidth, int BoardHeight)
-        {
-            // Definimos qué parte del sprite queremos (x, y, ancho, alto)
-            Rectangle fuente = new Rectangle(0, 0, bottonOkSprite.Width, bottonOkSprite.Height);
-
-            // Dibujamos
-            _spriteBatch.Draw(
-                bottonOkSprite,
-               new Rectangle((int)x, (int)y, (BoardWidth / 10) , BoardHeight / 10),
-                fuente,
-                Color.White
-            );
-        }//ficha azul.
-
-
         //almacena la posicion del boton izquierdo.
         public static Vector2 MInusButtonPositionxy
         {
@@ -120,6 +57,53 @@ namespace ParchisFresh
             get { return selectedNPlayers; }
             set { selectedNPlayers = value; }
         }
+        public static void LoadMenuSprites(ContentManager Content)
+        {
+            //cargando el sprite de botones.
+            buttonsSprite = Content.Load<Texture2D>("buttons.png");
+
+            //cargando el boton de okay
+            bottonOkSprite = Content.Load<Texture2D>("okButton.png");
+        }//LoadMenuSprites.
+        public static void DrawLeftButton(SpriteBatch _spriteBatch, float x, float y, int BoardWidth, int BoardHeight)
+        {
+            // Recorte del sprite de buttons el boton izquierdo.
+            Rectangle fuente = new Rectangle(345, 430, 240, 190);
+
+            // Dibujamos el Recorte.
+            _spriteBatch.Draw(
+                buttonsSprite,
+               new Rectangle((int)x, (int)y, BoardWidth / 10, BoardHeight / 10),
+                fuente,
+                Color.White
+            );
+        }//DrawLeftButton.
+        public static void DrawRightButton(SpriteBatch _spriteBatch, float x, float y, int BoardWidth, int BoardHeight)
+        {
+            // Recorte del boton derecho.
+            Rectangle fuente = new Rectangle(345 + 610, 430, 240, 190);
+
+            // Dibujamos el recorte del boton derecho.
+            _spriteBatch.Draw(
+                buttonsSprite,
+               new Rectangle((int)x, (int)y, BoardWidth / 10, BoardHeight / 10),
+                fuente,
+                Color.White
+            );
+        }//DrawRightButton.
+        public static void DrawOkButton(SpriteBatch _spriteBatch, float x, float y, int BoardWidth, int BoardHeight)
+        {
+            //Recorte del boton OK.
+            Rectangle fuente = new Rectangle(0, 0, bottonOkSprite.Width, bottonOkSprite.Height);
+
+            // Dibujamos el boton OK.
+            _spriteBatch.Draw(
+                bottonOkSprite,
+               new Rectangle((int)x, (int)y, (BoardWidth / 10) , BoardHeight / 10),
+                fuente,
+                Color.White
+            );
+        }//DrawOkButton.
 
         //Inicializa posicion de los botones del menu para seleccionar numero de Jugadores.
         public static void InitializeButtons(Vector2 Mxy, Vector2 Pxy, Vector2 Oxy)
@@ -128,9 +112,7 @@ namespace ParchisFresh
             MinusButtonPositionxy = Mxy;
             MaxButtonPositionxy = Pxy;
             OkButtonPositionxy = Oxy;
-        }
-
-        //Boton para añadir jugador.
+        }//InitializaButtons.
         public static void MaxButtonClicked(bool cliked, Vector2 MousePos, ref bool clickRightButton, int BoardWidth, int BoardHeidth)
         {
 
@@ -149,9 +131,7 @@ namespace ParchisFresh
                 NPlayers++;
                 clickRightButton = false;
             }
-        }
-
-        //boton para quitar jugador.
+        }//MaxButtonClicked
         public static void MinButtonClicked(bool cliked, Vector2 MousePos, ref bool clickLeftButton, int BoardWidth, int BoardHeidth)
         {
             if (cliked)
@@ -169,9 +149,7 @@ namespace ParchisFresh
                 NPlayers--;
                 clickLeftButton = false;
             }
-        }
-
-        //boton para seleccionar seleccionar numero de jugador.
+        }//MinButtonClicked.
         public static void OkButtonClicked(bool cliked, Vector2 MousePos, ref bool clickOkButton, int BoardWidth, int BoardHeidth)
         {
             if (cliked)
@@ -189,7 +167,7 @@ namespace ParchisFresh
                 selectedNPlayers = true;
                 clickOkButton = false;
             }
-        }
+        }//OkButtonClicked.
         #endregion
 
     }

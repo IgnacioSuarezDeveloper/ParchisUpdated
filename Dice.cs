@@ -39,109 +39,111 @@ namespace ParchisFresh
             get { return faceUp; }
             set {  faceUp = value;  }
         }
-
         #endregion
 
         #region metodos
-
         public Dice(Vector2 positionInit, Vector2 sizeInit, ColorChip Color)
         {
+            //posicion inicial.
             if(Color == ColorChip.red ||Color == ColorChip.green)
             {
                 positionInit.X -= 60;
                 positionInit.Y -= 90;
+
             }else if(Color == ColorChip.blue || Color == ColorChip.yellow)
             {
                 positionInit.X += 190;
                 positionInit.Y -= 90;
             }
 
+            //inicializando variables.
             position = positionInit;
             size = sizeInit;
             color = Color;
             faceUp = null;
             enable = true;
 
-        }//Dice();
+        }//Dice.
         public static void Load(ContentManager Content)
         {
-
             //carga la imagen del dado.
             dicesTexture = Content.Load<Texture2D>("dices.png");
-
-        }//Load();
+        }//Load.
         public  void Draw(SpriteBatch _spriteBatch, Vector2 cut)
         {
-
-            
-            // Definimos qué parte del sprite queremos (x, y, ancho, alto)
+            // Zona de recorte del Sprite de Dados.
             Rectangle fuente = new Rectangle((int)cut.X * dicesTexture.Width / 6,(int)cut.Y ,dicesTexture.Width / 6 , dicesTexture.Height);
 
-
-            // Dibujamos
+            // Dibujamos el sprite de Dados por la zona recortada.
             _spriteBatch.Draw(
                 dicesTexture,
                 new Rectangle((int)position.X, (int)position.Y, (int)size.X, (int)size.Y),
                 fuente,
                 Color.White
             );
-
-        }//Draw();
-
-        public async void DiceAnimation(SpriteBatch _spriteBatch, Vector2 cut)
-        {
-            endedAnimation = false;
-            for(int i = 0; i < 6; i++)
-            {
-                Random rnd = new Random();
-
-                //numero entre 0 y 4.
-                faceUp = rnd.Next(0, 6);
-
-                Debug.WriteLine($"{faceUp + 1} \n");
-
-                faceAnimation.X = (int)faceUp;
-
-                
-                await (Task.Delay(1));
-               
-            }
-            faceUp += 1;
-            endedAnimation = true;
-        }
+        }//Draw.
         public bool Click(ref ColorChip turn, SpriteBatch _spriteBatch)
         {
 
             //posicion del mouse.
             Vector2 mousePos = MouseHandeler.GetPos();
 
-            //si se hace click en el dado y esta habilitado.
+            //click en el dado esta habilitado y es del color del turno ? 
             if (
-                mousePos.X >= position.X && mousePos.X <= position.X + size.X  &&
-                mousePos.Y >= position.Y && mousePos.Y <= position.Y + size.Y  && 
-                MouseHandeler.GetClick() && turn == this.color && enable == true )
+                mousePos.X >= position.X && mousePos.X <= position.X + size.X &&
+                mousePos.Y >= position.Y && mousePos.Y <= position.Y + size.Y &&
+                MouseHandeler.GetClick() && turn == this.color && enable == true)
             {
+
+                //animar el dado.
                 DiceAnimation(_spriteBatch, faceAnimation);
+
+                //deshabilitar dado.
                 enable = false;
 
-                
-
-                //se tira el dado.
-
-
-                //muestra la cara arriba en el debug console.
-                if(faceUp != null)
+                //muestra la cara arriba en la salida.
+                if (faceUp != null)
                 {
                     Debug.WriteLine($"dado tirado {faceUp}");
                 }
 
-                //dado habilitado.
                 return true;
             }
-            else { return false; }
+            else
+            {
 
-        }//Click();
+                return false;
+            }
 
+        }//Click;
+        public async void DiceAnimation(SpriteBatch _spriteBatch, Vector2 cut)
+        {
+            //la animacion comienza.
+            endedAnimation = false;
+
+            //por cada cara.
+            for(int i = 0; i < 6; i++)
+            {
+
+                //numero entre 0 y 6.
+                faceUp = rnd.Next(0, 6);
+
+                Debug.WriteLine($"face up : {faceUp + 1} \n");
+
+                //x de la animación.
+                faceAnimation.X = (int)faceUp;
+
+                //delay de la animacion.
+                await (Task.Delay(1));
+               
+            }
+            //suma uno porque los numeros del dado comienzan en el 1 y no en 0 y para que llegue al 6.
+            faceUp += 1;
+
+            //final de la animacion.
+            endedAnimation = true;
+
+        }//DiceAnimation.
         #endregion
     }
 }

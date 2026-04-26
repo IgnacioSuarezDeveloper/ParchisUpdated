@@ -7,6 +7,7 @@ namespace ParchisFresh
 {
     internal class Board
     {
+        #region propiedades
         //textura tablero.
         private Texture2D texture;
 
@@ -24,7 +25,9 @@ namespace ParchisFresh
             get { return TileSize; }
         }
         //constructor tablero.
+        #endregion
 
+        #region metodos
         public Board(Vector2 _position, Vector2 _size)
         {
             position = _position;
@@ -43,6 +46,6 @@ namespace ParchisFresh
         {
             _spriteBatch.Draw(texture, new Rectangle((int)position.X, (int)position.Y, (int)size.X, (int)size.Y), Color.White);
         }
-        
+        #endregion
     }
 }

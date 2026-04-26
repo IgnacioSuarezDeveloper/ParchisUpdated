@@ -27,15 +27,17 @@ namespace ParchisFresh
 
         //turno 
         private ColorChip turn;
-        #endregion
 
         //numero de casillas que hay en el tablero.
         int NumberOfCells = 60;
 
         List<int> indexFixed = new List<int>();
+
+        //poscion en pantalla de los botones del menu.
         private Vector2 vectorMinusButton;
         private Vector2 vectorPlusButton;
         private Vector2 vectorOkButton;
+        #endregion
 
         #region methods
         public Game1()
@@ -46,19 +48,21 @@ namespace ParchisFresh
             //ancho alto de la ventana.
             _graphics.PreferredBackBufferWidth = (int)boardSize.X;   // ancho en píxeles
             _graphics.PreferredBackBufferHeight = (int)boardSize.Y;  // alto en píxeles
-
             _graphics.ApplyChanges();
         }
 
         protected override void Initialize()
-
         { 
+            //inicializando las variables del menu.
             InitMenuVariables();
 
+            //fuente.
             miFuente = Content.Load<SpriteFont>("File");            //cargando los esprites del menu.
+
+            //cargando los sprites del menu.
             Menu.LoadMenuSprites(Content);
            
-            //inicializando los botones.
+            //inicializando los botones del menu.
             Menu.InitializeButtons(vectorMinusButton,vectorPlusButton,vectorOkButton);
 
             //crea objeto tablero.
@@ -67,19 +71,23 @@ namespace ParchisFresh
             //jugadores init.
             players = new Player[4];
 
-
+            //creando jugadores y metiendolos en el arreglo.
             for(int i = 0; i < players.Length; i++)
             {
                 players[i] = new Player((ColorChip)i, boardSize, chipSize);
             }
 
+            //turno incial rojo.
             turn = ColorChip.red;
+
+            //inicializando componentes de MONOGAME.
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
+
             //cargando la imagen del tablero.
             board.Load(Content);
 
@@ -103,15 +111,17 @@ namespace ParchisFresh
             //click dados.
             AllDicesClick();
 
-
+            //para cada ficha del jugador al que le corresponde el turno.
             foreach(Chip c in players[(int)turn].Fichas)
             {
+                //la cara del dado es no es nula ? 
                 if(players[(int)turn].Dice.FaceUp != null)
                 {
+                    //comprobar clicks en las fichas del jugador y funcionalidad si click
                     c.Click(MouseHandeler.Position, ref turn, (int)players[(int)turn].Dice.FaceUp,ref players, boardSize, players[(int)turn].AllAtHome(), AmountOfChipsInCell((int)turn * 15 ));
                 }
             }
-
+            //comprobando las fichas en la misma casilla
             CheckChipsInSameCell();
 
             base.Update(gameTime);
@@ -137,7 +147,7 @@ namespace ParchisFresh
 
             base.Draw(gameTime);
         }
-        
+     
         public bool WantToExit()
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
@@ -256,8 +266,6 @@ namespace ParchisFresh
             vectorOkButton = new System.Numerics.Vector2((boardSize.X / 2) - 80, (boardSize.Y / 2) + 200);
 
         }
-
-
         #endregion
     }
 }

@@ -11,8 +11,6 @@ namespace ParchisFresh
         ColorChip color;
         Chip[] fichas;
         Dice dice;
-
-
         public ColorChip Color
         {
             get { return color; }
@@ -73,7 +71,6 @@ namespace ParchisFresh
         public void DrawAllChips(SpriteBatch _spriteBatch)
         {
             //dibuja todas las fichas del jugador.
-
             foreach (Chip c in fichas)
             {
                 c.Draw(_spriteBatch);
@@ -82,6 +79,7 @@ namespace ParchisFresh
         }
         public bool AllAtHome()
         {
+            //comprueba si todas las fichas estan en casa si es asi devuelve true si no false.
             foreach(Chip c in fichas)
             {
                 if (!c.AtHome)
