@@ -3,8 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\nache\\OneDrive\\Escritorio\\parchisUpdate\\ParchisUpdated\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|c:\\users\\nache\\onedrive\\escritorio\\parchisupdate\\parchisupdated\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|c:\\users\\nache\\onedrive\\escritorio\\parchisupdate\\parchisupdated\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|solutionrelative:player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|c:\\users\\nache\\onedrive\\escritorio\\parchisupdate\\parchisupdated\\mousehandeler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|solutionrelative:mousehandeler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|c:\\users\\nache\\onedrive\\escritorio\\parchisupdate\\parchisupdated\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|solutionrelative:menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|c:\\users\\nache\\onedrive\\escritorio\\parchisupdate\\parchisupdated\\chip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|solutionrelative:chip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|c:\\users\\nache\\onedrive\\escritorio\\parchisupdate\\parchisupdated\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|solutionrelative:board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|c:\\users\\nache\\onedrive\\escritorio\\parchisupdate\\parchisupdated\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -13,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|c:\\users\\nache\\onedrive\\escritorio\\parchisupdate\\parchisupdated\\dice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|solutionrelative:dice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|c:\\users\\nache\\onedrive\\escritorio\\parchisupdate\\parchisupdated\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|solutionrelative:player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,21 +42,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Chip.cs",
               "DocumentMoniker": "C:\\Users\\nache\\OneDrive\\Escritorio\\parchisUpdate\\ParchisUpdated\\Chip.cs",
               "RelativeDocumentMoniker": "Chip.cs",
-              "ToolTip": "C:\\Users\\nache\\OneDrive\\Escritorio\\parchisUpdate\\ParchisUpdated\\Chip.cs*",
-              "RelativeToolTip": "Chip.cs*",
-              "ViewState": "AgIAAGcAAAAAAAAAAAAQwGoAAAAQAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\nache\\OneDrive\\Escritorio\\parchisUpdate\\ParchisUpdated\\Chip.cs",
+              "RelativeToolTip": "Chip.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAUwAkAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-10T16:44:25.838Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -48,42 +63,88 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Player.cs",
-              "DocumentMoniker": "C:\\Users\\nache\\OneDrive\\Escritorio\\parchisUpdate\\ParchisUpdated\\Player.cs",
-              "RelativeDocumentMoniker": "Player.cs",
-              "ToolTip": "C:\\Users\\nache\\OneDrive\\Escritorio\\parchisUpdate\\ParchisUpdated\\Player.cs",
-              "RelativeToolTip": "Player.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF0AAAASAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\nache\\OneDrive\\Escritorio\\parchisUpdate\\ParchisUpdated\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\nache\\OneDrive\\Escritorio\\parchisUpdate\\ParchisUpdated\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-18T16:15:47.465Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Game1.cs",
-              "DocumentMoniker": "C:\\Users\\nache\\OneDrive\\Escritorio\\parchisUpdate\\ParchisUpdated\\Game1.cs",
-              "RelativeDocumentMoniker": "Game1.cs",
-              "ToolTip": "C:\\Users\\nache\\OneDrive\\Escritorio\\parchisUpdate\\ParchisUpdated\\Game1.cs",
-              "RelativeToolTip": "Game1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-10T16:47:17.8Z",
+              "WhenOpened": "2026-04-26T16:54:57.173Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "MouseHandeler.cs",
+              "DocumentMoniker": "C:\\Users\\nache\\OneDrive\\Escritorio\\parchisUpdate\\ParchisUpdated\\MouseHandeler.cs",
+              "RelativeDocumentMoniker": "MouseHandeler.cs",
+              "ToolTip": "C:\\Users\\nache\\OneDrive\\Escritorio\\parchisUpdate\\ParchisUpdated\\MouseHandeler.cs",
+              "RelativeToolTip": "MouseHandeler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-26T16:53:32.67Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Menu.cs",
+              "DocumentMoniker": "C:\\Users\\nache\\OneDrive\\Escritorio\\parchisUpdate\\ParchisUpdated\\Menu.cs",
+              "RelativeDocumentMoniker": "Menu.cs",
+              "ToolTip": "C:\\Users\\nache\\OneDrive\\Escritorio\\parchisUpdate\\ParchisUpdated\\Menu.cs",
+              "RelativeToolTip": "Menu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKoAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-26T16:45:56.178Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Board.cs",
+              "DocumentMoniker": "C:\\Users\\nache\\OneDrive\\Escritorio\\parchisUpdate\\ParchisUpdated\\Board.cs",
+              "RelativeDocumentMoniker": "Board.cs",
+              "ToolTip": "C:\\Users\\nache\\OneDrive\\Escritorio\\parchisUpdate\\ParchisUpdated\\Board.cs",
+              "RelativeToolTip": "Board.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-26T16:44:42.792Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\nache\\OneDrive\\Escritorio\\parchisUpdate\\ParchisUpdated\\Player.cs",
+              "RelativeDocumentMoniker": "Player.cs",
+              "ToolTip": "C:\\Users\\nache\\OneDrive\\Escritorio\\parchisUpdate\\ParchisUpdated\\Player.cs",
+              "RelativeToolTip": "Player.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-18T16:15:47.465Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Game1.cs",
+              "DocumentMoniker": "C:\\Users\\nache\\OneDrive\\Escritorio\\parchisUpdate\\ParchisUpdated\\Game1.cs",
+              "RelativeDocumentMoniker": "Game1.cs",
+              "ToolTip": "C:\\Users\\nache\\OneDrive\\Escritorio\\parchisUpdate\\ParchisUpdated\\Game1.cs",
+              "RelativeToolTip": "Game1.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAQwAwBAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T16:47:17.8Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Dice.cs",
               "DocumentMoniker": "C:\\Users\\nache\\OneDrive\\Escritorio\\parchisUpdate\\ParchisUpdated\\Dice.cs",
               "RelativeDocumentMoniker": "Dice.cs",
               "ToolTip": "C:\\Users\\nache\\OneDrive\\Escritorio\\parchisUpdate\\ParchisUpdated\\Dice.cs",
               "RelativeToolTip": "Dice.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-10T16:45:57.63Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-10T16:45:57.63Z"
             }
           ]
         }
