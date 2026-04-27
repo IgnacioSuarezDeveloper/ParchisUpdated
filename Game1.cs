@@ -19,6 +19,7 @@ namespace ParchisFresh
         private Vector2 InitialBoardPosition = new Vector2(0, 0);
 
         SpriteFont miFuente;
+
         //tamaño de las fichas.
         private Vector2 chipSize = new Vector2(50, 50);
 
