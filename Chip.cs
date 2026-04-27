@@ -183,8 +183,12 @@ namespace ParchisFresh
                         position.Y -= 40;
                     }
 
-                    //fuera de casa.
-                    atHome = false;
+                    if(nConcurrentChipsStartCell < 2)
+                    {
+                            //fuera de casa.
+                            atHome = false;
+                        }
+
 
                         //hay menos de dos fichas en la de salida?
                         if(nConcurrentChipsStartCell < 2)
