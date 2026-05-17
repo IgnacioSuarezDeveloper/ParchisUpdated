@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nache\\OneDrive\\Escritorio\\parchisUpdate\\ParchisUpdated\\ParchisFresh.csproj": {}
+    "C:\\Users\\nache\\OneDrive\\Escritorio\\ProyectosHobbie\\parchisUpdate\\ParchisUpdated\\ParchisFresh.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nache\\OneDrive\\Escritorio\\parchisUpdate\\ParchisUpdated\\ParchisFresh.csproj": {
+    "C:\\Users\\nache\\OneDrive\\Escritorio\\ProyectosHobbie\\parchisUpdate\\ParchisUpdated\\ParchisFresh.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nache\\OneDrive\\Escritorio\\parchisUpdate\\ParchisUpdated\\ParchisFresh.csproj",
+        "projectUniqueName": "C:\\Users\\nache\\OneDrive\\Escritorio\\ProyectosHobbie\\parchisUpdate\\ParchisUpdated\\ParchisFresh.csproj",
         "projectName": "ParchisFresh",
-        "projectPath": "C:\\Users\\nache\\OneDrive\\Escritorio\\parchisUpdate\\ParchisUpdated\\ParchisFresh.csproj",
+        "projectPath": "C:\\Users\\nache\\OneDrive\\Escritorio\\ProyectosHobbie\\parchisUpdate\\ParchisUpdated\\ParchisFresh.csproj",
         "packagesPath": "C:\\Users\\nache\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nache\\OneDrive\\Escritorio\\parchisUpdate\\ParchisUpdated\\obj\\",
+        "outputPath": "C:\\Users\\nache\\OneDrive\\Escritorio\\ProyectosHobbie\\parchisUpdate\\ParchisUpdated\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

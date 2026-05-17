@@ -1,10 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\nache\\OneDrive\\Escritorio\\parchisUpdate\\ParchisUpdated\\",
+  "WorkspaceRootPath": "C:\\Users\\nache\\OneDrive\\Escritorio\\ProyectosHobbie\\parchisUpdate\\ParchisUpdated\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|c:\\users\\nache\\onedrive\\escritorio\\parchisupdate\\parchisupdated\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|c:\\users\\nache\\onedrive\\escritorio\\proyectoshobbie\\parchisupdate\\parchisupdated\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|solutionrelative:game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|c:\\users\\nache\\onedrive\\escritorio\\proyectoshobbie\\parchisupdate\\parchisupdated\\chip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61DA459B-608A-4226-80FF-2A87364D0695}|ParchisFresh.csproj|solutionrelative:chip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -24,13 +28,26 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Game1.cs",
-              "DocumentMoniker": "C:\\Users\\nache\\OneDrive\\Escritorio\\parchisUpdate\\ParchisUpdated\\Game1.cs",
+              "DocumentMoniker": "C:\\Users\\nache\\OneDrive\\Escritorio\\ProyectosHobbie\\parchisUpdate\\ParchisUpdated\\Game1.cs",
               "RelativeDocumentMoniker": "Game1.cs",
-              "ToolTip": "C:\\Users\\nache\\OneDrive\\Escritorio\\parchisUpdate\\ParchisUpdated\\Game1.cs",
+              "ToolTip": "C:\\Users\\nache\\OneDrive\\Escritorio\\ProyectosHobbie\\parchisUpdate\\ParchisUpdated\\Game1.cs",
               "RelativeToolTip": "Game1.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAM4AAAAAAAAAAAAgwNgAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-27T12:13:24.939Z",
+              "WhenOpened": "2026-05-17T09:32:48.69Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Chip.cs",
+              "DocumentMoniker": "C:\\Users\\nache\\OneDrive\\Escritorio\\ProyectosHobbie\\parchisUpdate\\ParchisUpdated\\Chip.cs",
+              "RelativeDocumentMoniker": "Chip.cs",
+              "ToolTip": "C:\\Users\\nache\\OneDrive\\Escritorio\\ProyectosHobbie\\parchisUpdate\\ParchisUpdated\\Chip.cs",
+              "RelativeToolTip": "Chip.cs",
+              "ViewState": "AgIAAO4AAAAAAAAAAADwv/gAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-17T09:25:08.252Z",
               "EditorCaption": ""
             }
           ]

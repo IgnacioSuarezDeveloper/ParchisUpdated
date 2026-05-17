@@ -1,14 +1,11 @@
-﻿using Microsoft.Xna.Framework.Graphics;
-using System.Diagnostics;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
-using System;
-using System.Security.Cryptography.X509Certificates;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace ParchisFresh
 {
     //los colores de los jugadores , fichas y dados.
-   public enum ColorChip
+    public enum ColorChip
     {
         red,
         yellow,
@@ -18,7 +15,7 @@ namespace ParchisFresh
 
 
     //clase para crear instancias de las fichas que seran 4 fichas X numero de jugadores.
-    internal class Chip 
+    internal class Chip
     {
         #region properties
         static Texture2D chipsFullSprite;
@@ -26,9 +23,9 @@ namespace ParchisFresh
         Vector2 size;
         ColorChip color;
         bool atHome;
-        int ?casilla;
+        int? casilla;
         public static bool AllAtHome = true;
-        public int ? Casilla
+        public int? Casilla
         {
             get { return casilla; }
         }
@@ -39,7 +36,7 @@ namespace ParchisFresh
         #endregion
 
         #region methods
-        public Chip(Vector2 InitPos, Vector2 size ,ColorChip ChipColor, bool atHome) 
+        public Chip(Vector2 InitPos, Vector2 size, ColorChip ChipColor, bool atHome)
         {
 
             //color de la ficha.
@@ -64,7 +61,7 @@ namespace ParchisFresh
             chipsFullSprite = Content.Load<Texture2D>("chips.png");
 
         }//Load.
-        public  void Draw(SpriteBatch _spriteBatch)
+        public void Draw(SpriteBatch _spriteBatch)
         {
             //calculos para recortar la ficha del sprite
             int SpriteSpaceBetweenChips = 8;
@@ -73,7 +70,7 @@ namespace ParchisFresh
 
 
             // Rectangulo para recortar la ficha del sprite.
-            Rectangle fuente = new Rectangle( (int)color * (spriteDivided + SpriteSpaceBetweenChips) , 0, spriteChipsWidth, chipsFullSprite.Height);
+            Rectangle fuente = new Rectangle((int)color * (spriteDivided + SpriteSpaceBetweenChips), 0, spriteChipsWidth, chipsFullSprite.Height);
 
             //dibuja el recorte del sprite que es la ficha deseada y la dibuja en pantalla.
             _spriteBatch.Draw(
@@ -84,7 +81,7 @@ namespace ParchisFresh
             );
 
         }//Draw.
-        public void Click(Vector2 MousePos, ref ColorChip turn, int faceUp, ref Player[] players, Vector2 boardSize , bool allAtHome, int nOfChipsBeguining)
+        public void Click(Vector2 MousePos, ref ColorChip turn, int faceUp, ref Player[] players, Vector2 boardSize, bool allAtHome, int nOfChipsBeguining)
         {
             //ha terminado la animación del dado?
             if (players[(int)turn].Dice.EndedAnimation)
@@ -100,98 +97,103 @@ namespace ParchisFresh
                     }
                     else AllAtHome = true;
                 }
-           
-            //todas las fichas en casa y no ha salido un 5 ?
-            if( faceUp != 5 && AllAtHome)
-            {
-                ChangeTurn(ref turn, players);
-            } else if (//click en la ficha y color de turno es el color de la ficha ?
-               MousePos.X >= this.position.X && MousePos.X <= this.position.X + this.size.X &&
-               MousePos.Y >= this.position.Y && MousePos.Y <= this.position.Y + this.size.Y && MouseHandeler.GetClick() &&
-               turn == color
-              )
-            {
+
+                //todas las fichas en casa y no ha salido un 5 ?
+                if (faceUp != 5 && AllAtHome)
+                {
+                    ChangeTurn(ref turn, players);
+                }
+                else if (//click en la ficha y color de turno es el color de la ficha ?
+                   MousePos.X >= this.position.X && MousePos.X <= this.position.X + this.size.X &&
+                   MousePos.Y >= this.position.Y && MousePos.Y <= this.position.Y + this.size.Y && MouseHandeler.GetClick() &&
+                   turn == color
+                  )
+                {
                     //fichas en la misma casilla 
                     int nConcurrentChipsStartCell = 0;
 
-                //ficha clikada en casa y ha salido 5 ?
-                if (this.atHome && faceUp == 5)
-                {
+                    //ficha clikada en casa y ha salido 5 ?
+                    if (this.atHome && faceUp == 5)
+                    {
                         //recorrer cada ficha del jugador 
                         foreach (Chip C in players[(int)turn].Fichas)
                         {
-                                //el color es rojo y la casilla de la ficha es 0?
-                                if(color == ColorChip.red && C.casilla == 0)
-                                {
+                            //el color es rojo y la casilla de la ficha es 0?
+                            if (color == ColorChip.red && C.casilla == 0)
+                            {
 
-                                    nConcurrentChipsStartCell++;
- 
-                                }else if (//el color es verde y la casilla de la ficha es 15?
-                                color == ColorChip.green && C.casilla == 15)
-                                {
+                                nConcurrentChipsStartCell++;
 
-                                    nConcurrentChipsStartCell++;
+                            }
+                            else if (//el color es verde y la casilla de la ficha es 15?
+                            color == ColorChip.green && C.casilla == 15)
+                            {
 
-                                }else if (//el color es amarillo y la casilla de la ficha es 30?
-                                color == ColorChip.yellow && C.casilla == 30)
-                                {
-                                    nConcurrentChipsStartCell++;
+                                nConcurrentChipsStartCell++;
 
-                                }else if(//el color es azul y la casilla de la ficha es 45?
-                                color == ColorChip.blue && C.casilla == 45)
-                                {
-                                    nConcurrentChipsStartCell++;
-                                }
-                           
+                            }
+                            else if (//el color es amarillo y la casilla de la ficha es 30?
+                            color == ColorChip.yellow && C.casilla == 30)
+                            {
+                                nConcurrentChipsStartCell++;
+
+                            }
+                            else if (//el color es azul y la casilla de la ficha es 45?
+                            color == ColorChip.blue && C.casilla == 45)
+                            {
+                                nConcurrentChipsStartCell++;
+                            }
+
                         }
-                        
-                    //casilla de salida para cada color
-                    if(color == ColorChip.red)
-                    {
-                        casilla = 0;
 
-                    }else if(color == ColorChip.green)
-                    {
-                        casilla = 15;
-                    }else if(color == ColorChip.yellow)
-                    {
-                        casilla = 30;
-                    }else if(color == ColorChip.blue)
-                    {
-                        casilla = 45;
-                    }
+                        //casilla de salida para cada color
+                        if (color == ColorChip.red)
+                        {
+                            casilla = 0;
 
-                    //color de la ficha es rojo o verde y en la casilla de salida de cada color hay menos de 2 fichas ?
-                    if (color == ColorChip.red && nConcurrentChipsStartCell < 2 || color == ColorChip.green && nConcurrentChipsStartCell < 2)
-                    {
-                        int ofset = 400 - (int)position.X;
-                        position.X += ofset;
-                    }
-                    //color de la ficha es azul o amarillo y en la casilla de salida de cada color hay menos de 2 fichas ?
-                    else if (color == ColorChip.blue && nConcurrentChipsStartCell < 2 || color == ColorChip.yellow && nConcurrentChipsStartCell < 2)
-                    {
-                        position.X = position.X - ( (int)position.X - 650 );
-                    }
-                    //color de la ficha es rojo o azul y en la casilla de salida de cada color hay menos de 2 fichas ?
-                    if (color == ColorChip.red && nConcurrentChipsStartCell < 2 || color == ColorChip.blue && nConcurrentChipsStartCell < 2)
-                    {
-                        position.Y += 40;
-                    }
-                    //color de la ficha es  verde o amarillo y en la casilla de salida de cada color hay menos de 2 fichas ?
-                    else if (color == ColorChip.green && nConcurrentChipsStartCell < 2|| color == ColorChip.yellow && nConcurrentChipsStartCell < 2)
-                    {
-                        position.Y -= 40;
-                    }
+                        }
+                        else if (color == ColorChip.green)
+                        {
+                            casilla = 15;
+                        }
+                        else if (color == ColorChip.yellow)
+                        {
+                            casilla = 30;
+                        }
+                        else if (color == ColorChip.blue)
+                        {
+                            casilla = 45;
+                        }
 
-                    if(nConcurrentChipsStartCell < 2)
-                    {
+                        //color de la ficha es rojo o verde y en la casilla de salida de cada color hay menos de 2 fichas ?
+                        if (color == ColorChip.red && nConcurrentChipsStartCell < 2 || color == ColorChip.green && nConcurrentChipsStartCell < 2)
+                        {
+                            int ofset = 400 - (int)position.X;
+                            position.X += ofset;
+                        }
+                        //color de la ficha es azul o amarillo y en la casilla de salida de cada color hay menos de 2 fichas ?
+                        else if (color == ColorChip.blue && nConcurrentChipsStartCell < 2 || color == ColorChip.yellow && nConcurrentChipsStartCell < 2)
+                        {
+                            position.X = position.X - ((int)position.X - 650);
+                        }
+                        //color de la ficha es rojo o azul y en la casilla de salida de cada color hay menos de 2 fichas ?
+                        if (color == ColorChip.red && nConcurrentChipsStartCell < 2 || color == ColorChip.blue && nConcurrentChipsStartCell < 2)
+                        {
+                            position.Y += 40;
+                        }
+                        //color de la ficha es  verde o amarillo y en la casilla de salida de cada color hay menos de 2 fichas ?
+                        else if (color == ColorChip.green && nConcurrentChipsStartCell < 2 || color == ColorChip.yellow && nConcurrentChipsStartCell < 2)
+                        {
+                            position.Y -= 40;
+                        }
+
+                        if (nConcurrentChipsStartCell < 2)
+                        {
                             //fuera de casa.
                             atHome = false;
                         }
-
-
                         //hay menos de dos fichas en la de salida?
-                        if(nConcurrentChipsStartCell < 2)
+                        if (nConcurrentChipsStartCell < 2)
                         {
                             //cambio de turno.
                             if (turn < ColorChip.blue)
@@ -208,16 +210,18 @@ namespace ParchisFresh
                                 }
                             }
                         }
-                }else if (!this.atHome)
+                    }
+                    else if (!this.atHome)
                     {
                         //cambio de turno
+                        Move();
                         ChangeTurn(ref turn, players);
                     }
-            }
+                }
 
             }
         }
-        private void ChangeTurn(ref ColorChip  turn, Player[] players )
+        private void ChangeTurn(ref ColorChip turn, Player[] players)
         {
             //turno no es azul?
             if (turn < ColorChip.blue)
@@ -239,7 +243,12 @@ namespace ParchisFresh
                 }
             }
         }
-        
+        public void Move()
+        {
+            position.Y += size.X;
+            casilla += 1;
+        }
+
         #endregion
 
     }
