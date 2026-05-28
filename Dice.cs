@@ -102,10 +102,6 @@ namespace ParchisFresh
                 enable = false;
 
                 //muestra la cara arriba en la salida.
-                if (faceUp != null)
-                {
-                    Debug.WriteLine($"dado tirado {faceUp}");
-                }
 
                 return true;
             }
@@ -128,7 +124,7 @@ namespace ParchisFresh
                 //numero entre 0 y 6.
                 faceUp = rnd.Next(0, 6);
 
-                Debug.WriteLine($"face up : {faceUp + 1} \n");
+                
 
                 //x de la animación.
                 faceAnimation.X = (int)faceUp;

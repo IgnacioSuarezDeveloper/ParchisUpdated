@@ -5,3 +5,4 @@ hacer que el face up se actualice despues de tirar el dado.
 que no cambie de turno cuando se tira el da
 do y hay una ficha fuera de casa que no ha sido clikada.
 //si saco un 5 y hay dos fichas en la casilla de salida que no cambie de turno dandole a una fichaa que esta en casa solo a la que hay en la barrera.
+//que las fichas sigan el camino correspondiente.

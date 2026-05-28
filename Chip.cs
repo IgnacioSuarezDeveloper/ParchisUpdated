@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using System.Threading.Tasks;
 
 namespace ParchisFresh
 {
@@ -24,6 +25,7 @@ namespace ParchisFresh
         ColorChip color;
         bool atHome;
         int? casilla;
+        public int nmoves = 0;
         public static bool AllAtHome = true;
         public int? Casilla
         {
@@ -32,6 +34,10 @@ namespace ParchisFresh
         public bool AtHome
         {
             get { return atHome; }
+        }
+        public ColorChip Colorr
+        {
+            get { return this.color;}
         }
         #endregion
 
@@ -214,7 +220,7 @@ namespace ParchisFresh
                     else if (!this.atHome)
                     {
                         //cambio de turno
-                        Move();
+                        Move(players);
                         ChangeTurn(ref turn, players);
                     }
                 }
@@ -243,13 +249,36 @@ namespace ParchisFresh
                 }
             }
         }
-        public void Move()
+        public async void Move(Player []players)
         {
-            position.Y += size.X;
-            casilla += 1;
+            if(color == ColorChip.red)
+            {
+                while(nmoves != players[(int)ColorChip.red].Dice.FaceUp)
+                {
+                    if (casilla < 3 && nmoves < players[(int)ColorChip.red].Dice.FaceUp)
+                    {
+                        position.Y += size.Y;
+                        casilla += 1;
+                        nmoves++;
+                    }
+                    else if (casilla >= 3 && nmoves < players[(int)ColorChip.red].Dice.FaceUp)
+                    {
+                        position.X -= size.X;
+                        casilla += 1;
+                        nmoves++;
+                    }
+                    await (Task.Delay(500));
+                }
+                nmoves = 0;
+                
+            }
+            //aqui es donde se
+
         }
 
+        
         #endregion
 
     }
 }
+

@@ -121,6 +121,14 @@ namespace ParchisFresh
                     //comprobar clicks en las fichas del jugador y funcionalidad si click
                     c.Click(MouseHandeler.Position, ref turn, (int)players[(int)turn].Dice.FaceUp,ref players, boardSize, players[(int)turn].AllAtHome(), AmountOfChipsInCell((int)turn * 15 ));
                 }
+                if (!c.AtHome)
+                {
+                   
+
+                    Debug.WriteLine($"{c.Colorr} {c.Casilla} ");
+                    
+                }
+
             }
             //comprobando las fichas en la misma casilla
             CheckChipsInSameCell();
