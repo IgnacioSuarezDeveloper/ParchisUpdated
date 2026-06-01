@@ -51,7 +51,6 @@ namespace ParchisFresh
             _graphics.PreferredBackBufferHeight = (int)boardSize.Y;  // alto en píxeles
             _graphics.ApplyChanges();
         }
-
         protected override void Initialize()
         { 
             //inicializando las variables del menu.
@@ -84,7 +83,6 @@ namespace ParchisFresh
             //inicializando componentes de MONOGAME.
             base.Initialize();
         }
-
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -99,7 +97,6 @@ namespace ParchisFresh
             Dice.Load(Content);
 
         }
-
         protected override void Update(GameTime gameTime)
         {
             //si cerramos el juego.
@@ -108,7 +105,8 @@ namespace ParchisFresh
 
             //se actualiza la posicion del mouse.
             MouseHandeler.Position = MouseHandeler.GetPos();
-
+            //215 658.
+            Debug.WriteLine(MouseHandeler.Position.X + " " + MouseHandeler.Position.Y);
             //click dados.
             AllDicesClick();
 
@@ -125,7 +123,7 @@ namespace ParchisFresh
                 {
                    
 
-                    Debug.WriteLine($"{c.Colorr} {c.Casilla} ");
+                   // Debug.WriteLine($"{c.Colorr} {c.Casilla} ");
                     
                 }
 
@@ -135,7 +133,6 @@ namespace ParchisFresh
 
             base.Update(gameTime);
         }
-
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CadetBlue);
@@ -156,14 +153,12 @@ namespace ParchisFresh
 
             base.Draw(gameTime);
         }
-     
         public bool WantToExit()
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 return true;
             else return false;
         }
-
         public void DrawAllChips()
         {
             foreach (Player p in players)
@@ -171,7 +166,6 @@ namespace ParchisFresh
                 p.DrawAllChips(_spriteBatch);
             }
         }
-
         public void DrawAllDices()
         {
             foreach (Player p in players)
@@ -179,7 +173,6 @@ namespace ParchisFresh
                 p.Dice.Draw(_spriteBatch, p.Dice.FaceAnimation);
             }
         }
-
         public void AllDicesClick()
         {
             foreach (Player p in players)
@@ -191,7 +184,6 @@ namespace ParchisFresh
                 }
             }
         }
-
         public  void CheckChipsInSameCell()
         {
             //comprobar cuantas fichas hay en la misma casilla.
@@ -248,7 +240,6 @@ namespace ParchisFresh
                 }
             }
         }
-
         public int AmountOfChipsInCell(int casilla)
         {
             int count = 0;
@@ -265,7 +256,6 @@ namespace ParchisFresh
             
             return count;   
         }
-
         public void InitMenuVariables()
         {
             Menu.NPlayers = 2;

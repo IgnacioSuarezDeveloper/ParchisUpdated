@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace ParchisFresh
@@ -174,13 +175,31 @@ namespace ParchisFresh
                         //color de la ficha es rojo o verde y en la casilla de salida de cada color hay menos de 2 fichas ?
                         if (color == ColorChip.red && nConcurrentChipsStartCell < 2 || color == ColorChip.green && nConcurrentChipsStartCell < 2)
                         {
-                            int ofset = 400 - (int)position.X;
-                            position.X += ofset;
+                            if (color == ColorChip.red) 
+                            {
+                                int ofset = 400 - (int)position.X;
+                                position.X += ofset;
+                            }else if (color == ColorChip.green)
+                            {
+                                position.Y -= 200;
+                                int ofset = 192 - (int)position.X;
+                                position.X += ofset;
+                            }
                         }
                         //color de la ficha es azul o amarillo y en la casilla de salida de cada color hay menos de 2 fichas ?
                         else if (color == ColorChip.blue && nConcurrentChipsStartCell < 2 || color == ColorChip.yellow && nConcurrentChipsStartCell < 2)
                         {
-                            position.X = position.X - ((int)position.X - 650);
+                            if (color == ColorChip.yellow) 
+                            {
+                                position.X = position.X - ((int)position.X - 650);
+                            }else if(color == ColorChip.blue)
+                            {
+                                position.Y += 200;
+                                int ofset = 860 - (int)position.X;
+                                position.X += ofset;
+                            }
+
+                            
                         }
                         //color de la ficha es rojo o azul y en la casilla de salida de cada color hay menos de 2 fichas ?
                         if (color == ColorChip.red && nConcurrentChipsStartCell < 2 || color == ColorChip.blue && nConcurrentChipsStartCell < 2)
@@ -249,6 +268,7 @@ namespace ParchisFresh
                 }
             }
         }
+        //movimiento de las fichas.
         public async void Move(Player []players)
         {
             if(color == ColorChip.red)
@@ -263,6 +283,11 @@ namespace ParchisFresh
                     }
                     else if (casilla >= 3 && nmoves < players[(int)ColorChip.red].Dice.FaceUp)
                     {
+                        if (casilla == 3)
+                        {
+                       
+                            position.Y += 35;
+                        }
                         position.X -= size.X;
                         casilla += 1;
                         nmoves++;
@@ -272,11 +297,54 @@ namespace ParchisFresh
                 nmoves = 0;
                 
             }
+            if (color == ColorChip.yellow)
+            {
+                while (nmoves != players[(int)ColorChip.yellow].Dice.FaceUp)
+                {
+                    Debug.WriteLine(casilla);
+                    if (casilla > 27 && nmoves < players[(int)ColorChip.yellow].Dice.FaceUp)
+                    {
+                        position.Y -= size.Y;
+                        casilla -= 1;
+                        nmoves++;
+                    }
+                    else if (casilla <= 27 && nmoves < players[(int)ColorChip.yellow].Dice.FaceUp)
+                    {
+                        position.X += size.X;
+                        casilla -= 1;
+                        nmoves++;
+                    }
+                    await (Task.Delay(500));
+                }
+                nmoves = 0;
+            }
+
+            if (color == ColorChip.blue)
+            {
+                while (nmoves != players[(int)ColorChip.blue].Dice.FaceUp)
+                {
+                    Debug.WriteLine(casilla);
+                    if (casilla > 27 && nmoves < players[(int)ColorChip.blue].Dice.FaceUp)
+                    {
+                        position.Y -= size.Y;
+                        casilla -= 1;
+                        nmoves++;
+                    }
+                    else if (casilla <= 27 && nmoves < players[(int)ColorChip.blue].Dice.FaceUp)
+                    {
+                        position.X += size.X;
+                        casilla -= 1;
+                        nmoves++;
+                    }
+                    await (Task.Delay(500));
+                }
+                nmoves = 0;
+            }
+
             //aqui es donde se
 
         }
 
-        
         #endregion
 
     }
