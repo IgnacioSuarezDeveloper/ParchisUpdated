@@ -8,3 +8,4 @@ do y hay una ficha fuera de casa que no ha sido clikada.
 //que las fichas sigan el camino correspondiente.
 //que las fichas sigan el camino correspondiente.
 //cambiar posicion de salida posicion logica de las fichas al salir como se comportan cuando hay dos fichas juntas y que se muevan por la pantalla.
+//perfeccionar el movimiento de las fichas.

@@ -134,7 +134,7 @@ namespace ParchisFresh
                
             }
             //suma uno porque los numeros del dado comienzan en el 1 y no en 0 y para que llegue al 6.
-            faceUp += 1;
+            faceUp += 1;            
 
             //final de la animacion.
             endedAnimation = true;

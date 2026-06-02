@@ -216,7 +216,6 @@ namespace ParchisFresh
                 {
                     indexFixed.Add(i);
                     bool primera = false;
-
                     bool segundo = false;
 
                     foreach (Player p in players)
@@ -225,15 +224,29 @@ namespace ParchisFresh
                         {
                             if(c.Casilla == i && !primera)
                             {
-                                c.position.X -= 20;
-                                primera = true;
-
+                                if(c.Casilla == 0 || c.Casilla == 30)
+                                {
+                                    c.position.X -= 20;
+                                    primera = true;
+                                }else if(c.Casilla == 15 || c.Casilla == 45)
+                                {
+                                    c.position.Y += 20;
+                                    primera = true;
+                                }
                             }else if (c.Casilla == i && !segundo)
                             {
-
-                                c.position.X += 20;
-                                segundo = true;
+                                if (c.Casilla == 0 || c.Casilla == 30)
+                                {
+                                    c.position.X += 20;
+                                    segundo = true;
+                                }else if (c.Casilla == 15 || c.Casilla == 45)
+                                {
+                                    c.position.Y -= 20;
+                                    segundo = true;
+                                }
+                                    
                             }
+                           
                         }
                     }
                     nFichasInCell = 0;
